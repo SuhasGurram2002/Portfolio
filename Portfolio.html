@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Sai Suhas Gurram - Backend Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            animation: fadeInDown 1s ease;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: -30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .experience-item, .project-item {
+            background: #f8f9fa;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover, .project-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-item h3, .project-item h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .role {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul, .project-item ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .experience-item li, .project-item li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            opacity: 0.95;
+        }
+
+        .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .education-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .education-item .degree {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .education-item .date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .project-links {
+            margin-top: 10px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: #764ba2;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .cert-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-badge:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Venkata Sai Suhas Gurram</h1>
+            <p>Backend Engineer | System-Level Networking | Microservices</p>
+            <div class="contact-links">
+                <a href="mailto:suhasgurram@gmail.com">✉️ Email</a>
+                <a href="https://github.com/SuhasGurram2002" target="_blank">🔗 GitHub</a>
+                <a href="https://www.linkedin.com/in/suhasgurram" target="_blank">💼 LinkedIn</a>
+                <a href="https://www.hackerrank.com/profile/suhasgurram" target="_blank">👨‍💻 HackerRank</a>
+                <a href="https://leetcode.com/u/suhasgurram/" target="_blank">🧩 LeetCode</a>
+                <a href="tel:+919652889516">📱 +91 9652889516</a>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h2>About Me</h2>
+                <p style="font-size: 1.1em; color: #555; line-height: 1.8;">
+                    Backend Engineer specializing in high-performance network protocols and microservices architecture. Currently at Boeing India, I work on system-level networking using MsQuic, CI/CD pipelines, and containerized deployments. Experienced in building scalable multi-client systems, implementing security-first solutions, and driving measurable improvements in connection overhead and test coverage.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <h3>Boeing</h3>
+                    <div class="role">Software Engineer</div>
+                    <div class="date">September 2024 – Present | Bengaluru, India</div>
+                    
+                    <p style="margin-top: 15px; font-weight: 600; color: #667eea;">Bifrost-X - System-Level Networking</p>
+                    <ul>
+                        <li>Architected system-level networking solution using MsQuic (Microsoft's QUIC implementation)</li>
+                        <li>Refactored single-client/single-server implementation into modular client.c and server.c architecture</li>
+                        <li>Implemented multi-client and multi-server communication with multiplexing, achieving <strong>30% reduction in connection overhead</strong></li>
+                        <li>Validated scalability using Docker containers locally and Azure Kubernetes Service (AKS)</li>
+                        <li>Developed Spring Boot interface layer with RESTful APIs and JWT-based authentication</li>
+                    </ul>
+
+                    <p style="margin-top: 15px; font-weight: 600; color: #667eea;">Boeing Flight Management System (BFMS)</p>
+                    <ul>
+                        <li>Enhanced SonarQube test coverage to <strong>80%+</strong> by writing comprehensive JUnit tests</li>
+                        <li>Maintained GitLab CI/CD YAML pipelines for automated builds and deployments</li>
+                        <li>Addressed critical vulnerability issues identified through Coverity scans, ensuring compliance</li>
+                        <li>Enhanced Spring Boot backend modules including controller, service, and repository layers</li>
+                    </ul>
+
+                    <p style="margin-top: 15px; font-weight: 600; color: #667eea;">Crew Alert Messaging Tool (CAMT)</p>
+                    <ul>
+                        <li>Designed dynamic logical and graphical node-based UI using Angular and SVG</li>
+                        <li>Visualized AND, OR, and NOT gates dynamically generated from JSON inputs</li>
+                        <li>Utilized TypeScript and reactive forms for scalable interactive components</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Projects</h2>
+                
+                <div class="project-item">
+                    <h3>ChatterBox</h3>
+                    <div class="role">Angular, Spring Boot, Python NLP | 2024</div>
+                    <ul>
+                        <li>Built text-based microblogging platform with post, like, and comment functionality</li>
+                        <li>Implemented intelligent hashtag suggestion using SpaCy NLP based on post content analysis</li>
+                        <li>Integrated RESTful backend with Angular frontend and MySQL database</li>
+                        <li>Designed scalable microservices architecture for handling concurrent user interactions</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/SuhasGurram2002/ChatterBox" target="_blank">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3>Siksha Village App</h3>
+                    <div class="role">Java, Android Studio | 2023</div>
+                    <ul>
+                        <li>Developed Android application enabling villagers to browse and apply for government schemes</li>
+                        <li>Implemented complaint submission system with staff dashboard for issue tracking</li>
+                        <li>Created intuitive UI for users with varying levels of digital literacy</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/SuhasGurram2002/Siksha-Village-App" target="_blank">View on GitHub →</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Java</li>
+                            <li>C</li>
+                            <li>Python</li>
+                            <li>TypeScript</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Libraries</h3>
+                        <ul>
+                            <li>Spring Boot</li>
+                            <li>MsQuic</li>
+                            <li>Angular</li>
+                            <li>SpaCy NLP</li>
+                            <li>JWT</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps & Tools</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Kubernetes (AKS)</li>
+                            <li>GitLab CI/CD</li>
+                            <li>SonarQube</li>
+                            <li>Coverity</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Specializations</h3>
+                        <ul>
+                            <li>REST APIs</li>
+                            <li>TCP/IP, QUIC</li>
+                            <li>Microservices</li>
+                            <li>MySQL, PostgreSQL</li>
+                            <li>Security & Auth</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>R V Institute of Technology and Management</h3>
+                    <div class="degree">Bachelor of Engineering in Computer Science and Engineering</div>
+                    <div class="date">2020 – 2024 | Bengaluru, India</div>
+                    <p style="margin-top: 5px; color: #667eea; font-weight: 600;">CGPA: 8.9</p>
+                </div>
+                <div class="education-item">
+                    <h3>Narayana Junior College</h3>
+                    <div class="degree">Pre-University (PUC)</div>
+                    <div class="date">2018 – 2020 | Nellore, India</div>
+                    <p style="margin-top: 5px; color: #667eea; font-weight: 600;">Percentage: 94%</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-badge">SQL (Basic)<br>HackerRank</div>
+                    <div class="cert-badge">SQL (Intermediate)<br>HackerRank</div>
+                    <div class="cert-badge">Java (Basic)<br>HackerRank</div>
+                    <div class="cert-badge">Problem Solving (Basic)<br>HackerRank</div>
+                    <div class="cert-badge">Problem Solving (Intermediate)<br>HackerRank</div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Venkata Sai Suhas Gurram. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.8;">Built with passion for backend engineering and distributed systems</p>
+        </footer>
+    </div>
+</body>
+</html>
